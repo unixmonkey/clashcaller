@@ -1,0 +1,31 @@
+<head>
+  <title>clashcaller</title>
+</head>
+
+<body>
+  <h1>Clashcaller</h1>
+  <p>Assistant for planning wars in Clash of Clans</p>
+
+  <button id="start-war">Start War</button><br>
+  <button id="join-war">Join War</button><br>
+  <button id="search">Search</button><br>
+  <button id="about">About</button>
+
+  {{> startwar}}
+
+  <ul>
+    {{#each wars}}
+      <li>{{clan_name}} vs {{enemy_name}}</li>
+    {{/each}}
+  </ul>
+
+</body>
+
+<template name="startwar">
+  <form id="startwar_form" class="hidden">
+    <a class="close">&times;</a>
+    <input name="clan_name" placeholder="Your Clan Name">
+    <input name="enemy_name" placeholder="Enemy Clan Name">
+    <button type="submit">Submit</button>
+  </form>
+</template>
